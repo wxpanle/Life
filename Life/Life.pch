@@ -1,0 +1,83 @@
+//
+//  Life.pch
+//  Life
+//
+//  Created by qianfeng on 16/5/4.
+//  Copyright © 2016年 qianfeng. All rights reserved.
+//
+
+#ifndef Life_pch
+#define Life_pch
+
+#ifdef __OBJC__
+
+#pragma mark ----第三方库----
+#import "AFNetworking.h" //网络请求
+#import "MJRefresh.h" //下拉刷新，上拉加载
+#import "UIImageView+WebCache.h" //给imageView加载图片
+#import "UIButton+WebCache.h" //给button加载图片
+#import "FactoryUI.h" //工厂类
+#import "Masonry.h"
+#import "UMSocial.h"
+#import "UMSocialQQHandler.h"
+#import "UMSocialWechatHandler.h"
+#import "CoreData+MagicalRecord.h"//数据库
+#import "PLCoreArticalModel+CoreDataProperties.h"
+#import "PLCoreJokeModel+CoreDataProperties.h"
+#import "PLCoreLifeModel+CoreDataProperties.h"
+
+#pragma mark ----全局的宏定义----
+#define SCREEN_W [UIScreen mainScreen].bounds.size.width //屏幕宽度
+#define SCREEN_H ([UIScreen mainScreen].bounds.size.height - 64) //屏幕高度
+#define RGB(r,g,b,a) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a]
+
+#pragma mark ----接口----
+// 生活接口
+#define HOMEURL @"http://open4.bantangapp.com/recommend/index?client_id=bt_app_android&client_secret=ffcda7a1c4ff338e05c42e7972ba7b8d&page=%ld&pagesize=20"
+//生活详情
+#define HOMEDETAIL @"http://open4.bantangapp.com/topic/info?client_id=bt_app_android&client_secret=ffcda7a1c4ff338e05c42e7972ba7b8d&id=%@"
+
+//美文
+#define ARTICALURL @"http://d.yixincao.com/interface/getdata.php?act=list&type=nuanwen&page=%ld"
+//美文详情
+#define ARTICALDETAILURL @"http://d.yixincao.com/detailshow.php?id=%@&from=ios"
+
+//  美食页面接口
+#define FOODVC_URL @"http://api.yizhong.cccwei.com/api.php?srv=2009&cid=406114&city_id=%d&uid=0&tms=20151023214446&sig=e16ae7df2fc67c5d&wssig=fe8998a4d5bfd568&os_type=1&version=7&page_size=20&since_id=0"
+
+//段子
+#define JOKEDATA @"http://ic.snssdk.com/neihan/stream/mix/v1/?content_type=-102"
+#define  JokeMoreData @"http://ic.snssdk.com/neihan/stream/mix/v1/?content_type=-102&min_time=%@"
+//// 评论：
+#define JokeDataComment @"http://isub.snssdk.com/neihan/comments/?count=20&group_id=%@&offset=%d"
+
+////   体验页面
+////   视频
+//#define VIDEO_URL @"http://api.short.tv/webapi/index?page=%d"
+////    视频播放详情
+//#define VIDEOPLAY_URL @"http://api.short.tv/webapi/detail?vid=%@"
+////  视频播放
+//#define PLAY_URL @"http://api.short.tv/webapi/playurl?vid=%@"
+
+//推荐
+#define AMUSERECOMMEND @"http://app.video.baidu.com/adnativeindex/?version=4.3.1&mtj_cuid=A41B6BBB78223D5D6E0B3E3F7C014426%7C839753320920268&mtj_timestamp=1445954346831"
+
+//电影
+#define AMUSEMOVIE @"http://app.video.baidu.com/adyymovie/?beg=%d&end=%d&order=hot&version=5.1.1&mtj_cuid=A41B6BBB78223D5D6E0B3E3F7C014426%%7C839753320920268&mtj_timestamp=1446002408462"
+
+//电视剧
+#define AMUSETV @"http://app.video.baidu.com/adnativetvplay/?beg=%d&end=%d&order=hot&version=4.3.1&mtj_cuid=A41B6BBB78223D5D6E0B3E3F7C014426%%7C839753320920268&mtj_timestamp=1446002836330"
+
+//微电影
+#define AMUSESMALLMOVIE @"http://app.video.baidu.com/adnativemovie/?beg=%d&end=%d&order=hot&version=4.3.1&mtj_cuid=A41B6BBB78223D5D6E0B3E3F7C014426%%7C839753320920268&mtj_timestamp=1446002241846"
+
+//综艺
+#define AMUSEVARIETYSHOW @"http://app.video.baidu.com/adnativetvshow/?beg=%d&end=%d&order=hot&version=4.3.1&mtj_cuid=A41B6BBB78223D5D6E0B3E3F7C014426%%7C839753320920268&mtj_timestamp=1446003522187"
+
+//动漫
+#define AMUSEANIMATION @"http://app.video.baidu.com/adnativecomic/?beg=%d&end=%d&order=hot&version=4.3.1&mtj_cuid=A41B6BBB78223D5D6E0B3E3F7C014426%%7C839753320920268&mtj_timestamp=1446003316996"
+
+
+#endif
+
+#endif /* Life_pch */
